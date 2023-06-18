@@ -1,4 +1,7 @@
 <?php
+use App\Http\Controllers\{
+    PeopleController
+};
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/website', function () {
+    return view('index');
 });
+Route::resource('/website', PeopleController::class);
+
+// Route::group(['middleware'=>'auth'],function(){
+// });
